@@ -1,10 +1,13 @@
-# vln-devsecops
+# Vlinder Software's DevSecOps
 
 Shared home for **DevSecOps automation, infrastructure modules, and
 delivery building blocks** used across `VlinderSoftware`, `vln-*`,
 `cpp4theselftaught`, and in-scope personal projects.
 
-## What belongs here
+Public repositories in this org are made available free of charge,
+"as is", with no warranty of any kind.
+
+## What you'll find here
 
 - reusable GitHub Actions
 - reusable Terraform modules and infrastructure patterns
@@ -16,67 +19,20 @@ Application code, project-specific infrastructure, content repositories, and
 deployment state stay with their owning repositories. This org is for the
 **shared parts**.
 
-## Current repository layout
+Some repositories are not publicly available: we share what we can.
+
+### Current public repositories
 
 | Repository | Purpose |
 | --- | --- |
-| `operations` | coordination workspace |
-| `guidance` | standards, migration notes, and shared process/docs |
-| `terraform-modules` | shared Terraform modules and infrastructure patterns |
-| `actions-msvc` | GitHub Action for MSVC developer command prompt setup |
-| `actions-build-paper` | GitHub Action for notebook/paper build and publish automation |
-| `actions-generate-licenses` | GitHub Action for template-based licenses page generation |
-| `actions-validate-coverage` | GitHub Action for unit test code coverage validation |
-| `actions-autoversion` | GitHub Action for repository versioning automation |
-| `github-runners` | shared GitHub runner infrastructure |
-| `utils-system-cleanup` | shared cleanup utilities |
-| `automation-books` | shared book build and editorial automation |
-
-## Operating conventions
-
-### Naming
-
-Use short kebab-case repository names, usually following a
-`<type>-<purpose>` pattern such as:
-
-- `actions-msvc`
-- `terraform-modules`
-- `github-runners`
-- `utils-system-cleanup`
-
-See the guidance repo for more complete guidance.
-
-### Branching and release flow
-
-1. Repositories start on `dev` while still experimental.
-2. Move to `main` once they are mature enough for pre-production use.
-3. When first promoting to `main`, tag the current commit with both `v0.x` and
-   `v0.x.y`.
-4. Use moving `latest`, `vX` and `vX.Y` tags, and keep `vX.Y.Z` immutable.
-5. When generally available, create a release branch such as `release/v1` and
-   tag `v1`, `v1.0`, and `v1.0.0` from a README-accurate commit.
-
-### Workflow naming
-
-Prefix workflow filenames with an explicit category and a verb-led description:
-
-- `ci_validate_terraform.yml`
-- `ct_run_e2e.yml`
-- `cd_deploy_infrastructure.yml`
-- `_build_node.yml` for same-repo reusable workflows
-
-### Dependency updates
-
-1. Configure Dependabot for every ecosystem a repository actually uses.
-2. Auto-approve or auto-merge **minor and patch** updates only when the test
-   baseline is trustworthy.
-3. Keep **major** updates manual unless explicitly decided otherwise.
-4. If a repo does not yet have enough automated coverage, add Dependabot first
-   and keep the approval flow gated.
+| `.github` | Contains only the README and whatever GitHub needs for this. |
+| [`vln-devsecops/actions-msvc`](https://github.com/vln-devsecops/actions-msvc) | GitHub Action for MSVC developer command prompt setup.<br/>A fork of [ilammy/msvc-dev-cmd](https://github.com/ilammy/msvc-dev-cmd). |
+| [`vln-devsecops/actions-autoversion`](https://github.com/vln-devsecops/actions-autoversion) | A GitHub Action to automate versioning |
+| [`vln-devsecops/actions-generate-licenses`](https://github.com/vln-devsecops/actions-generate-licenses) | GitHub Action for generating comprehensive open source license reports from npm dependencies |
+| [`vln-devsecops/actions-validate-coverage`](https://github.com/vln-devsecops/actions-validate-coverage) | A GitHub Action to validate unit test code coverage |
+| [`vln-devsecops/actions-build-paper`](https://github.com/vln-devsecops/actions-build-paper) | GitHub action to build a ipynb into a PDF and a static GitHub page |
 
 ## Notes for consumers
 
-- prefer explicit `uses:` and module source references that point at the
-  `vln-devsecops` repos directly; do not rely on old repository redirects
 - prefer version tags over floating branch references in examples and docs
-- expect some repositories to remain on `dev` until their interfaces settle
+- expect some repositories to remain on `dev` and `v0.x` versions until their interfaces settle
