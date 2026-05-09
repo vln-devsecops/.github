@@ -1,8 +1,8 @@
 # vln-devsecops
 
-Shared home for extracted **DevSecOps automation, infrastructure modules, and
-delivery building blocks** used across `VlinderSoftware`, `vln-polaris`,
-`cpp4theselftaught`, and related in-scope personal projects.
+Shared home for **DevSecOps automation, infrastructure modules, and
+delivery building blocks** used across `VlinderSoftware`, `vln-*`,
+`cpp4theselftaught`, and in-scope personal projects.
 
 ## What belongs here
 
@@ -20,14 +20,15 @@ deployment state stay with their owning repositories. This org is for the
 
 | Repository | Purpose |
 | --- | --- |
-| `operations` | coordination workspace, standards, migration notes, and shared process/docs |
-| `terraform-modules` | extracted shared Terraform modules and infrastructure patterns |
+| `operations` | coordination workspace |
+| `guidance` | standards, migration notes, and shared process/docs |
+| `terraform-modules` | shared Terraform modules and infrastructure patterns |
 | `actions-msvc` | GitHub Action for MSVC developer command prompt setup |
 | `actions-build-paper` | GitHub Action for notebook/paper build and publish automation |
-| `actions-generate-licenses` | GitHub Action for license generation |
-| `actions-validate-coverage` | GitHub Action for coverage validation |
-| `actions-autoversion` | GitHub Action for repository version automation |
-| `github-runners` | shared runner infrastructure |
+| `actions-generate-licenses` | GitHub Action for template-based licenses page generation |
+| `actions-validate-coverage` | GitHub Action for unit test code coverage validation |
+| `actions-autoversion` | GitHub Action for repository versioning automation |
+| `github-runners` | shared GitHub runner infrastructure |
 | `utils-system-cleanup` | shared cleanup utilities |
 | `automation-books` | shared book build and editorial automation |
 
@@ -43,13 +44,15 @@ Use short kebab-case repository names, usually following a
 - `github-runners`
 - `utils-system-cleanup`
 
+See the guidance repo for more complete guidance.
+
 ### Branching and release flow
 
 1. Repositories start on `dev` while still experimental.
 2. Move to `main` once they are mature enough for pre-production use.
 3. When first promoting to `main`, tag the current commit with both `v0.x` and
    `v0.x.y`.
-4. Use moving `vX` and `vX.Y` tags, and keep `vX.Y.Z` immutable.
+4. Use moving `latest`, `vX` and `vX.Y` tags, and keep `vX.Y.Z` immutable.
 5. When generally available, create a release branch such as `release/v1` and
    tag `v1`, `v1.0`, and `v1.0.0` from a README-accurate commit.
 
@@ -70,15 +73,6 @@ Prefix workflow filenames with an explicit category and a verb-led description:
 3. Keep **major** updates manual unless explicitly decided otherwise.
 4. If a repo does not yet have enough automated coverage, add Dependabot first
    and keep the approval flow gated.
-
-## Current migration/extraction direction
-
-- reusable Terraform assets are being extracted from application repositories
-  into `terraform-modules`
-- shared book automation is being centralized in `automation-books`, with
-  `workspace-books` as the first consumer
-- project-owned repositories continue to keep application-specific logic and
-  state, while shared parts move here only when the boundaries are clean
 
 ## Notes for consumers
 
