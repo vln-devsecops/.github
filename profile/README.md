@@ -27,7 +27,6 @@ Some repositories are not publicly available: we share what we can.
 | --- | --- |
 | `.github` | Contains only the README and whatever GitHub needs for this. |
 | [`vln-devsecops/actions-msvc`](https://github.com/vln-devsecops/actions-msvc) | GitHub Action for MSVC developer command prompt setup.<br/>A fork of [ilammy/msvc-dev-cmd](https://github.com/ilammy/msvc-dev-cmd). |
-| [`vln-devsecops/actions-autoversion`](https://github.com/vln-devsecops/actions-autoversion) | A GitHub Action to automate versioning |
 | [`vln-devsecops/actions-generate-licenses`](https://github.com/vln-devsecops/actions-generate-licenses) | GitHub Action for generating comprehensive open source license reports from npm dependencies |
 | [`vln-devsecops/actions-validate-coverage`](https://github.com/vln-devsecops/actions-validate-coverage) | A GitHub Action to validate unit test code coverage |
 | [`vln-devsecops/actions-build-paper`](https://github.com/vln-devsecops/actions-build-paper) | GitHub action to build a ipynb into a PDF and a static GitHub page |
