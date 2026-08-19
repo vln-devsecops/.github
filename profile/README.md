@@ -30,6 +30,7 @@ Some repositories are not publicly available: we share what we can.
 | [`vln-devsecops/actions-generate-licenses`](https://github.com/vln-devsecops/actions-generate-licenses) | GitHub Action for generating comprehensive open source license reports from npm dependencies |
 | [`vln-devsecops/actions-validate-coverage`](https://github.com/vln-devsecops/actions-validate-coverage) | A GitHub Action to validate unit test code coverage |
 | [`vln-devsecops/actions-build-paper`](https://github.com/vln-devsecops/actions-build-paper) | GitHub action to build a ipynb into a PDF and a static GitHub page |
+| [`vln-devsecops/actions-sast-sonarqube`](https://github.com/vln-devsecops/actions-sast-sonarqube) | GitHub Action running self-hosted, ephemeral SonarQube Community Build SAST scans, with client-side new-finding detection and PR blocking policy |
 | [`vln-devsecops/terraform-modules`](https://github.com/vln-devsecops/terraform-modules) | Reusable Terraform modules, mostly for AWS infrastructure. |
 
 ## Notes for consumers
